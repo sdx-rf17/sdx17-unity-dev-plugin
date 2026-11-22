@@ -1,0 +1,52 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace {NAMESPACE}
+{
+    /// <summary>
+    /// Standalone item definition created by the Sdx17 Developer Plugin
+    /// when no Inventory package type named ItemDefinition was found in
+    /// the project. It is a complete, usable ScriptableObject on its own;
+    /// when the real Sdx17 Inventory package is added later, prefer its
+    /// ItemDefinition and migrate these assets to it.
+    /// </summary>
+    [CreateAssetMenu(fileName = "NewItem", menuName = "Sdx17/Item Definition (Standalone)")]
+    public class {TYPE_NAME} : ScriptableObject
+    {
+        [SerializeField] private string itemId = "item_001";
+        [SerializeField] private string displayName = "New Item";
+        [SerializeField] private string description = "";
+        [SerializeField] private Sprite icon;
+        [SerializeField] private int maxStack = 99;
+        [SerializeField] private int sellPrice = 0;
+        [SerializeField] private List<string> tags = new List<string>();
+
+        public string ItemId => itemId;
+        public string DisplayName => displayName;
+        public string Description => description;
+        public Sprite Icon => icon;
+        public int MaxStack => maxStack;
+        public int SellPrice => sellPrice;
+        public IReadOnlyList<string> Tags => tags;
+
+        public bool IsStackable => maxStack > 1;
+
+        private void OnValidate()
+        {
+            if (maxStack < 1)
+            {
+                maxStack = 1;
+            }
+
+            if (sellPrice < 0)
+            {
+                sellPrice = 0;
+            }
+
+            if (string.IsNullOrWhiteSpace(itemId))
+            {
+                itemId = "item_001";
+            }
+        }
+    }
+}

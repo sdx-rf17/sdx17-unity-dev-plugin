@@ -1,0 +1,21 @@
+Third-Party Notices
+Sdx17 Developer Plugin — version 0.1.0
+Package: com.sdx17.devplugin
+Copyright 2026 Sdx17 — MIT License (see LICENSE)
+
+No third-party code, fonts, audio, or assets are included in this package.
+
+All code in this package is original work by Sdx17, written for this
+package, and licensed under the MIT License. There are no bundled
+dependencies, no vendored libraries, no third-party scripts, no
+third-party fonts, no third-party audio, and no third-party art or
+model assets.
+
+The package uses only Unity's own APIs (UnityEngine, UnityEditor, and
+the standard .NET libraries available in Unity 2022.3 LTS). Unity itself
+is not bundled with this package; a Unity 2022.3 LTS install is required
+to use it, under Unity's own licence terms.
+
+If any third-party material is added in a future version, this file will
+be updated at that time with the material's name, licence, and source.
+Until then, this notice is complete and accurate for v0.1.0.

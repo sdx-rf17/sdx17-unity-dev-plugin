@@ -1,0 +1,1 @@
+{"allowUnsafeCode":false,"autoReferenced":true,"defineConstraints":[],"excludePlatforms":[],"includePlatforms":["Editor"],"name":"Sdx17.DevPlugin.Editor","noEngineReferences":false,"overrideReferences":false,"precompiledReferences":[],"references":["Sdx17.DevPlugin.Runtime"],"rootNamespace":"Sdx17.DevPlugin","versionDefines":[]}

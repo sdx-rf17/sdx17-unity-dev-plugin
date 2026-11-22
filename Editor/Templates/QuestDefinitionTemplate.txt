@@ -1,0 +1,50 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace {NAMESPACE}
+{
+    /// <summary>
+    /// Standalone quest definition created by the Sdx17 Developer Plugin
+    /// when no Quest package type named QuestDefinition was found in the
+    /// project. It is a complete, usable ScriptableObject on its own;
+    /// when the real Sdx17 Quest package is added later, prefer its
+    /// QuestDefinition and migrate these assets to it.
+    /// </summary>
+    [CreateAssetMenu(fileName = "NewQuest", menuName = "Sdx17/Quest Definition (Standalone)")]
+    public class {TYPE_NAME} : ScriptableObject
+    {
+        [SerializeField] private string questId = "quest_001";
+        [SerializeField] private string displayName = "New Quest";
+        [SerializeField] private string description = "";
+        [SerializeField] private List<string> objectives = new List<string>();
+        [SerializeField] private int experienceReward = 0;
+        [SerializeField] private int goldReward = 0;
+
+        public string QuestId => questId;
+        public string DisplayName => displayName;
+        public string Description => description;
+        public IReadOnlyList<string> Objectives => objectives;
+        public int ExperienceReward => experienceReward;
+        public int GoldReward => goldReward;
+
+        public bool HasObjectives => objectives != null && objectives.Count > 0;
+
+        private void OnValidate()
+        {
+            if (experienceReward < 0)
+            {
+                experienceReward = 0;
+            }
+
+            if (goldReward < 0)
+            {
+                goldReward = 0;
+            }
+
+            if (string.IsNullOrWhiteSpace(questId))
+            {
+                questId = "quest_001";
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace {NAMESPACE}
+{
+    /// <summary>
+    /// Standalone dialogue graph created by the Sdx17 Developer Plugin
+    /// when no Dialogue package type named DialogueGraph was found in the
+    /// project. It is a complete, usable ScriptableObject on its own;
+    /// when the real Sdx17 Dialogue package is added later, prefer its
+    /// DialogueGraph and migrate these assets to it.
+    /// </summary>
+    [CreateAssetMenu(fileName = "NewDialogue", menuName = "Sdx17/Dialogue Graph (Standalone)")]
+    public class {TYPE_NAME} : ScriptableObject
+    {
+        [SerializeField] private string graphId = "dialogue_001";
+        [SerializeField] private string speakerName = "Speaker";
+        [SerializeField] private List<DialogueLine> lines = new List<DialogueLine>();
+
+        public string GraphId => graphId;
+        public string SpeakerName => speakerName;
+        public IReadOnlyList<DialogueLine> Lines => lines;
+
+        public bool HasLines => lines != null && lines.Count > 0;
+
+        public DialogueLine GetFirstLine()
+        {
+            return HasLines ? lines[0] : null;
+        }
+
+        private void OnValidate()
+        {
+            if (string.IsNullOrWhiteSpace(graphId))
+            {
+                graphId = "dialogue_001";
+            }
+        }
+    }
+
+    [System.Serializable]
+    public class DialogueLine
+    {
+        [SerializeField] private string speaker = "";
+        [SerializeField] private string text = "";
+        [SerializeField] private List<string> choices = new List<string>();
+
+        public string Speaker => speaker;
+        public string Text => text;
+        public IReadOnlyList<string> Choices => choices;
+    }
+}

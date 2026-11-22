@@ -1,0 +1,52 @@
+# Unity generated folders — never commit these.
+# They are recreated by Unity when the project is opened.
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Unity crash / profiling artefacts
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+*.stackdump
+
+# Visual Studio / Rider generated files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.idea/
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Build outputs
+*.apk
+*.aab
+*.exe
+*.app
+*.ipa
+
+# .meta files: KEEP them.
+# Every .meta file in this package (including Editor/Templates/*.txt.meta
+# if Unity generates them) must be committed alongside its asset, or Unity
+# will assign new GUIDs on import and references will break. This ignore
+# file deliberately does not exclude *.meta.
